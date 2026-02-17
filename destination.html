@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#d4a373">
+    <link rel="icon" type="image/png" href="Images/logo/PMR.png">
 
     <!-- SEO Meta Tags -->
     <meta name="description"
@@ -41,8 +42,13 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="cultural.html">Cultural Weddings</a></li>
-                <li><a href="destination.html" class="active">Destination Weddings</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle active">Weddings <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="cultural.html">Cultural Weddings</a></li>
+                        <li><a href="destination.html" class="active">Destination Weddings</a></li>
+                    </ul>
+                </li>
                 <li><a href="index.html#client-stories">Stories</a></li>
             </ul>
         </nav>
@@ -55,7 +61,7 @@
     <div class="mobile-menu">
         <div class="close-menu"><i class="fas fa-times"></i></div>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#weddings">Home</a></li>
             <li><a href="cultural.html">Cultural Weddings</a></li>
             <li><a href="destination.html" class="active">Destination Weddings</a></li>
             <li><a href="index.html#client-stories">Stories</a></li>

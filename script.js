@@ -88,6 +88,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    // === Smart Navbar (Hide/Show on Scroll) ===
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Scroll Down - Hide Navbar
+            header.classList.add('nav-hidden');
+        } else {
+            // Scroll Up - Show Navbar
+            header.classList.remove('nav-hidden');
+        }
+        lastScrollTop = scrollTop;
+    });
+
     // === Active Nav Highlight ===
     function setActiveNavLink() {
         const currentPath = window.location.pathname;
