@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#d4a373">
-    <link rel="icon" type="image/png" href="Images/logo/PMR.png">
+    <link rel="icon" type="image/png" href="images/logo/PMR.png">
 
     <!-- SEO Meta Tags -->
     <meta name="description"
@@ -53,7 +53,7 @@
     <header>
         <div class="logo">
             <a href="#hero">
-                <img src="Images/logo/PMR.png" alt="Peak Moments by Rumesh">
+                <img src="images/logo/PMR.png" alt="Peak Moments by Rumesh">
             </a>
         </div>
         <nav>
@@ -67,6 +67,7 @@
                         <li><a href="destination.html">Destination Weddings</a></li>
                     </ul>
                 </li>
+                <li><a href="#films">Films</a></li>
                 <li><a href="#client-stories">Stories</a></li>
             </ul>
         </nav>
@@ -186,14 +187,14 @@
             <div class="container">
                 <div class="entry-grid">
                     <a href="destination.html" class="entry-card fade-in-left"
-                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('images/destination weddings/tishara/24.jpg');">
+                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('images/destination weddings/tishara/30.jpg');">
                         <div class="entry-content">
                             <h3>Destination Weddings</h3>
                             <span>Explore Gallery <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </a>
                     <a href="cultural.html" class="entry-card fade-in-right"
-                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('images/weddings/hindu weddings/1.jpg');">
+                        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('images/weddings/sinhala weddings/10.jpg');">
                         <div class="entry-content">
                             <h3>Cultural Weddings</h3>
                             <span>Explore Gallery <i class="fas fa-arrow-right"></i></span>
@@ -241,7 +242,7 @@
                     <div class="film-card fade-in-up" style="transition-delay: 0.2s">
                         <a href="https://youtu.be/GURrjr-YPfk?si=RDkXj7h1Bb7V2EHv" target="_blank" class="film-link">
                             <div class="film-thumbnail">
-                                <img src="images/weddings/smv.jpg" alt="Traditional Wedding Film" loading="lazy">
+                                <img src="images/weddings/SMV_1.jpg" alt="Traditional Wedding Film" loading="lazy">
                                 <div class="play-overlay"><i class="fas fa-play"></i></div>
                             </div>
                             <div class="film-details">
@@ -331,12 +332,13 @@
                             class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/peakmomentsbyrumeshweddings" target="_blank"
                         aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@peakmomentsbyrumeshgloble" target="_blank" aria-label="YouTube"><i
+                    <a href="http://www.youtube.com/@peakmomentsbyrumeshglobal" target="_blank" aria-label="YouTube"><i
                             class="fab fa-youtube"></i></a>
                     <a href="https://www.tiktok.com/@peakmomentsbyrumesh" target="_blank" aria-label="TikTok"><i
                             class="fab fa-tiktok"></i></a>
                 </div>
             </div>
+            
 
             <div class="footer-column businesses-column">
                 <h3>Our Family</h3>
@@ -371,6 +373,45 @@
         </div>
     </footer>
 
+<div id="inquiryModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Start Your Journey</h3>
+        <p>Tell us a bit about your big day!</p>
+        
+        <form name="contact-form">
+            
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="WhatsApp Number" required>
+            </div>
+
+            <div class="form-group">
+                <select name="event_type" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; background: white; color: #666;" required>
+                    <option value="" disabled selected>Select Event Type</option>
+                    <option value="Wedding Day">Wedding Day</option>
+                    <option value="Destination Wedding">Destination Wedding</option>
+                    <option value="Homecoming">Homecoming</option>
+                    <option value="Preshoot / Engagement">Preshoot / Engagement</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label style="font-size: 0.8rem; color: #666; display: block; text-align: left; margin-bottom: 5px;">Event Date (Approximate)</label>
+                <input type="date" name="date">
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </button>
+        </form>
+    </div>
+</div>
+    
 </body>
 
 </html>

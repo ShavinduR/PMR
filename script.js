@@ -1,5 +1,40 @@
 // script.js - Updated to match new HTML structure and premium features
 
+// Modal Open/Close Logic
+const modal = document.getElementById('inquiryModal');
+const closeBtn = document.querySelector('.close-modal');
+
+window.openInquiryModal = function() {
+    if(modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeModal() {
+    if(modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+if(closeBtn) closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+});
+
+// Button Link Logic
+const inquiryButtons = document.querySelectorAll('.header-btn, .btn-primary, .cta-section .btn');
+inquiryButtons.forEach(btn => {
+    const href = btn.getAttribute('href');
+    if(href && (href.includes('#footer') || href === '#')) {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openInquiryModal();
+        });
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // === Mobile Menu Toggle ===
     const hamburger = document.querySelector('.hamburger');
@@ -401,3 +436,21 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeReferenceGallery();
     testimonialsCarousel();
 });
+
+// === NEW: Form Handling (WhatsApp Redirect + Data Save) ===
+const scriptURL = 'https://script.google.com/macros/s/AKfycbykW9_U0ZJbJ3NRXQr_3nYQxChlIqF5V97iVrD3hMqyXGekz0S6lXFV8VzydKQFCh8NHA/exec';
+const form = document.forms['contact-form'];
+
+if (form) {
+    form.addEventListener('submit', e => {
+        e.preventDefault(); // ෆෝම් එක නිකන්ම යන එක නවත්තනවා
+        
+        // 1. ඉස්සෙල්ලාම කස්ටමර්ව WhatsApp යවනවා (පරක්කු වෙන්නේ නෑ)
+        window.location.href = "https://wa.me/94766782913";
+
+        // 2. ඊට පස්සේ හිමින් සැරේ ඩේටා ටික ෂීට් එකට යවනවා (Background)
+        fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+            .then(response => console.log('Data Saved Successfully!'))
+            .catch(error => console.error('Error!', error.message));
+    });
+}
