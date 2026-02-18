@@ -437,20 +437,3 @@ document.addEventListener('DOMContentLoaded', () => {
     testimonialsCarousel();
 });
 
-// === NEW: Form Handling (WhatsApp Redirect + Data Save) ===
-const scriptURL = 'https://script.google.com/macros/s/AKfycbykW9_U0ZJbJ3NRXQr_3nYQxChlIqF5V97iVrD3hMqyXGekz0S6lXFV8VzydKQFCh8NHA/exec';
-const form = document.forms['contact-form'];
-
-if (form) {
-    form.addEventListener('submit', e => {
-        e.preventDefault(); // ෆෝම් එක නිකන්ම යන එක නවත්තනවා
-        
-        // 1. ඉස්සෙල්ලාම කස්ටමර්ව WhatsApp යවනවා (පරක්කු වෙන්නේ නෑ)
-        window.location.href = "https://wa.me/94766782913";
-
-        // 2. ඊට පස්සේ හිමින් සැරේ ඩේටා ටික ෂීට් එකට යවනවා (Background)
-        fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
-            .then(response => console.log('Data Saved Successfully!'))
-            .catch(error => console.error('Error!', error.message));
-    });
-}
